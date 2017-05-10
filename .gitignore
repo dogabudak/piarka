@@ -1,0 +1,6 @@
+.ab/
+lib/
+node_modules/
+platforms/
+.abproject/
+.abignore/

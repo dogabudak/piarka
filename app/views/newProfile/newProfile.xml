@@ -1,0 +1,14 @@
+<Page loaded="loaded">
+    <StackLayout>
+        <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
+        <TextField text="{{ Name }}" id="Name" hint="Name" autocorrect="false" autocapitalizationType="none"/>
+        <TextField text="{{ surname }}" id="surname" hint="Surname" autocorrect="false" autocapitalizationType="none"/>
+        <TextField text="{{ gender }}" id="gender" hint="gender" autocorrect="false" autocapitalizationType="none"/>
+        <TextField text="{{email}}" id="email" hint="Email Address" keyboardType="email" autocorrect="false"
+                   autocapitalizationType="none"/>
+        <TextField text="{{ comment }}" id="comment" hint="Tell Us About Yourself!!" autocorrect="false" autocapitalizationType="none"/>
+
+        <Button text="Update" tap="update" />
+        <Button text="Skip" tap="skipTo" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,12 @@
+<Page loaded="loaded">
+    <StackLayout orientation="vertical">
+        <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
+        <TextField id="username" text="{{ username }}" hint="Username" autocorrect="false"
+                   autocapitalizationType="none"/>
+        <TextField secure="true" text="{{ password }}" hint="Password"/>
+        <Button text="Forgot Password ?" tap="forgotUser" id="forgot-password"/>
+        <Button text="Sign in" tap="signIn"/>
+        <Button text="Facebook login" tap="facebookLogin"/>
+        <Button text="New User ?" tap="register" id="register"/>
+    </StackLayout>
+</Page>

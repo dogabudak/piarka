@@ -1,0 +1,5 @@
+<Page loaded="pageNavigatedTo">
+    <StackLayout orientation="vertical">
+        <TextView text="this is kapalicarsi bitch" />
+    </StackLayout>
+</Page>

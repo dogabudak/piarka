@@ -1,0 +1,11 @@
+<grid-layout class="drawer-content">
+    <stack-layout>
+        <label text="Profile" tap="navigate" class="{{ selectedPage == 'profile' ? 'selected' : '' }}" />
+        <label text="Map view" tap="navigate" class="{{ selectedPage == 'mapview' ? 'selected' : '' }}" />
+        <label text="Locations" tap="navigate" class="{{ selectedPage == 'locations' ? 'selected' : '' }}" />
+        <label text="Select Another City" tap="navigate" class="{{ selectedPage == 'cities' ? 'selected' : '' }}" />
+        <label text="About" tap="navigate" class="{{ selectedPage == 'help' ? 'selected' : '' }}" />
+        <label text="Settings" tap="navigate" class="{{ selectedPage == 'settings' ? 'selected' : '' }}" />
+        <label text="Logout" tap="navigate" class="{{ selectedPage == 'logout' ? 'selected' : '' }}" />
+    </stack-layout>
+</grid-layout>

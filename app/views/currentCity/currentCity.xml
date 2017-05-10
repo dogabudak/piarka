@@ -1,0 +1,45 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:map="nativescript-mapbox" navigatingTo="navigatingTo"
+      xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:widgets="shared/widgets"
+      loaded="pageLoaded">
+
+    <page.actionBar>
+        <action-bar title="City View">
+            <navigation-button icon="res://ic_menu" tap="toggleDrawer" ios:visibility="collapsed"/>
+            <action-bar.actionItems>
+                <ios>
+                    <action-item icon="res://ic_menu" ios.position="left" tap="toggleDrawer"/>
+                </ios>
+            </action-bar.actionItems>
+        </action-bar>
+    </page.actionBar>
+
+    <drawer:rad-side-drawer id="drawer">
+        <drawer:rad-side-drawer.mainContent>
+            <!-- About page contents -->
+            <stack-layout>
+                <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
+                <ContentView height="320" width="320">
+                    <map:Mapbox
+                            accessToken="pk.eyJ1IjoiZGFya2R1Y2siLCJhIjoiY2l2dGt6YThtMDAxbjJ6dGVjYjFlazJqOSJ9.BmPp86sGm3Twd9JWLhUiog"
+                            mapStyle="light"
+                            latitude="41.01557434"
+                            longitude="28.9800726"
+                            zoomLevel="13"
+                            showUserLocation="true"
+                            mapReady="onMapReady">
+                    </map:Mapbox>
+                </ContentView>
+                <Button text="Start the Tour from beginning" tap="begin"/>
+                <Button text="Find the closest location" tap="find"/>
+            </stack-layout>
+        </drawer:rad-side-drawer.mainContent>
+        <drawer:rad-side-drawer.drawerContent>
+            <widgets:drawer-content/>
+        </drawer:rad-side-drawer.drawerContent>
+    </drawer:rad-side-drawer>
+
+</Page>
+
