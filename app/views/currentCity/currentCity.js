@@ -1,6 +1,8 @@
 var mapbox = require("nativescript-mapbox"),
     frameModule = require("ui/frame");
 
+
+// drawer için gerekli olan şeyler
 exports.toggleDrawer = function() {
     var topmost = frameModule.topmost();
     var page = topmost.currentPage;
@@ -12,6 +14,11 @@ exports.navigate = function(args) {
     var pageName = args.view.text.toLowerCase();
     frameModule.topmost().navigate("views/" + pageName + "/" + pageName);
 }
+
+
+
+
+
 function onMapReady(args) {
     args.map.addMarkers([
         {

@@ -12,8 +12,10 @@ var __extends = this.__extends || function (d, b) {
 //for debug purposes
 
 var application = require("application");
-application.mainModule = "views/login/login";
 application.cssFile = "./app.css";
+application.start({ moduleName: "views/login/login" });
+
+/*
 var MyDelegate = (function (_super) {
     __extends(MyDelegate, _super);
     function MyDelegate() {
@@ -31,5 +33,6 @@ var MyDelegate = (function (_super) {
     MyDelegate.ObjCProtocols = [UIApplicationDelegate];
     return MyDelegate;
 })(UIResponder);
+
 application.ios.delegate = MyDelegate;
-application.start();
+*/

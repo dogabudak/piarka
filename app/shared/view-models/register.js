@@ -10,9 +10,14 @@ function User(info) {
     var viewModel = new Observable({
         username: info.username || "",
         password: info.password || "",
-        rePassword:info.rePassword || "",
+        rePassword:info.rePassword || ""
     });
     viewModel.register = function () {
+      if (viewModel.get("password") !== viewModel.get("rePassword")){
+        //TODO Check if its working
+        console.log("Password error");
+        throw Error("Password problem");
+      }
         return fetchModule.fetch(config.signupUrl + "/signup", {
                 method: "GET",
                 headers: {

@@ -1,9 +1,8 @@
 var frameModule = require("ui/frame"),
     UserViewModel = require("../../shared/view-models/login"),
     dialogsModule = require("ui/dialogs"),
-    appSettings = require("application-settings");
-
-var user = new UserViewModel();
+    appSettings = require("application-settings"),
+    user = new UserViewModel();
 
 exports.register = function () {
     var topmost = frameModule.topmost();

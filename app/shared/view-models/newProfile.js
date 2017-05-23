@@ -11,7 +11,6 @@
      var viewModel = new Observable({
          name: info.name || "",
          sirName: info.sirName || "" ,
-         gender:info.gender || "" ,
          email:info.email || "" ,
          comment:info.Comment ||"" ,
      });
@@ -19,9 +18,9 @@
          return fetchModule.fetch(config.updateUrl + "/update", {
                  method: "GET",
                  headers: {
-                     'info': 'name:' + viewModel.get("name") + "sirName:" + viewModel.get("sirName")+ "gender:" + viewModel.get("gender")+ "email:" + viewModel.get("email")+ "comment:" + viewModel.get("comment"),
-                     "Content-Type": "application/json"
-
+                     "info": "name:" + viewModel.get("name") + "sirName:" + viewModel.get("sirName")+ "gender:" + viewModel.get("gender")+ "email:" + viewModel.get("email")+ "comment:" + viewModel.get("comment"),
+                     "Content-Type": "application/json",
+                     "Token": "token information"
                  }
              })
              .then(handleErrors)

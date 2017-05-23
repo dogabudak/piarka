@@ -1,13 +1,17 @@
 <Page loaded="loaded">
     <StackLayout>
-        <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
+      <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
+      <ListView id="urls-list">
+      <ListView.itemTemplate>
+                  <Image rowSpan="0" width="200" height="200" src="{{ thumb }}" stretch="aspectFit" />
+          </ListView.itemTemplate>
+      </ListView>
+      <Button row="1" text="Pick Single Image" tap="onSelectSingleTap" />
         <TextField text="{{ Name }}" id="Name" hint="Name" autocorrect="false" autocapitalizationType="none"/>
         <TextField text="{{ surname }}" id="surname" hint="Surname" autocorrect="false" autocapitalizationType="none"/>
-        <TextField text="{{ gender }}" id="gender" hint="gender" autocorrect="false" autocapitalizationType="none"/>
         <TextField text="{{email}}" id="email" hint="Email Address" keyboardType="email" autocorrect="false"
                    autocapitalizationType="none"/>
         <TextField text="{{ comment }}" id="comment" hint="Tell Us About Yourself!!" autocorrect="false" autocapitalizationType="none"/>
-
         <Button text="Update" tap="update" />
         <Button text="Skip" tap="skipTo" />
     </StackLayout>
