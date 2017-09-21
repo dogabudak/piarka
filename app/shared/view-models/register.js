@@ -13,7 +13,12 @@ function User(info) {
         rePassword:info.rePassword || ""
     });
     viewModel.register = function () {
-      if (viewModel.get("password") !== viewModel.get("rePassword")){
+        if ((viewModel.get("username") === undefined)||(viewModel.get("rePassword") === undefined)){
+            //TODO when password and username is empty application crashes
+            console.log("Password error");
+            throw Error("Password problem");
+        }
+        if (viewModel.get("password") !== viewModel.get("rePassword")){
         //TODO Check if its working
         console.log("Password error");
         throw Error("Password problem");
@@ -27,10 +32,13 @@ function User(info) {
             })
             .then(handleErrors)
             .then(function (response) {
-                return response.json();
+          //    console.log("**********"+JSON.stringify(response))
+            returnInfo = JSON.parse(response._bodyInit)
+                return returnInfo.token;
             })
             .then(function (data) {
-              var returnInf = data ;
+              global.token = data
+              console.log(data)
             });
     };
     return viewModel;

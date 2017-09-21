@@ -25,7 +25,7 @@ exports.register = function() {
                   });
                   return Promise.reject();
           }).then(function() {
-                      frameModule.topmost().navigate("views/newProfile/newProfile");
+                      frameModule.topmost().navigate("views/profile/profile");
 
           });
         };

@@ -23,11 +23,12 @@ function User(info) {
             })
             .then(handleErrors)
             .then(function (response) {
-                return response.json();
-            })
+              returnInfo = JSON.parse(response._bodyInit)
+              return returnInfo.token;
+                        })
             .then(function (data) {
                console.log(data)
-                user.token = data.token;
+               global.token = data
                 if (user.token === null) {
                     throw Error(data);
                 }
@@ -47,11 +48,11 @@ function User(info) {
             })
             .then(handleErrors)
             .then(function (response) {
-                return response.json();
-            })
+              returnInfo = JSON.parse(response._bodyInit)
+              return returnInfo.token;
+                        })
             .then(function (data) {
-                console.log(data)
-                user.token = data.token;
+                global.token = data
                 if (user.token === null) {
                     throw Error(data);
                 }
