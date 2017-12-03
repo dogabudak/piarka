@@ -1,5 +1,7 @@
 var mapbox = require("nativescript-mapbox"),
     geolocation = require("nativescript-geolocation"),
+    http = require("http"),
+    config = require("../../shared/config"),
     frameModule = require("ui/frame");
 
 function tapOnMArkerFunction(tappedMarker) {
@@ -95,8 +97,14 @@ function onMapReady(args) {
  sightLocations.forEach(function (eachMarker) {
      args.map.addMarkers([eachMarker]);
  });
+ //TODO used fake location gero location does not work properly on virtual device
     location.then(function (currentLocation) {
-        console.log(currentLocation.latitude, currentLocation.altitude, currentLocation.longitude);
+      http.request({
+          url: config.updateUrl+"/update",
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          content: JSON.stringify({ token: global.token, currentLoc: currentLocation })
+      })
         var fakeLocObj = {
             latitude: 41.0043886,
             longitude: 28.9781053
