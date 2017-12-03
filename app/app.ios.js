@@ -6,9 +6,9 @@ var __extends = this.__extends || function (d, b) {
     };
 
 // for debug purposes
-//var trace = require("trace");
-//trace.setCategories(trace.categories.All);
-//trace.enable();
+var trace = require("trace");
+trace.setCategories(trace.categories.All);
+trace.enable();
 //for debug purposes
 
 var application = require("application");

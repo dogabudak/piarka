@@ -1,7 +1,4 @@
-<navigation:ExampleDrawerPage xmlns:navigation="navigation/example-drawer-page" loaded="pageLoaded"
-                              navigatedTo="onNavigatedTo"
-                              xmlns:dpg="nativescript-telerik-ui/sidedrawer/drawerpage"
-                              xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+<navigation:ExampleDrawerPage xmlns:navigation="nativescript-pro-ui/sidedrawer" loaded="pageLoaded"
                               xmlns="http://www.nativescript.org/tns.xsd">
     <navigation.actionBar>
         <ActionBar title="Getting started" />

@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:map="nativescript-mapbox" navigatingTo="navigatingTo"
       xmlns="http://schemas.nativescript.org/tns.xsd"
-      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:drawer="nativescript-pro-ui/sidedrawer"
       xmlns:widgets="shared/widgets"
       loaded="pageLoaded">
 
@@ -42,4 +42,3 @@
     </drawer:rad-side-drawer>
 
 </Page>
-

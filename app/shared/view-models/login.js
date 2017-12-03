@@ -13,6 +13,7 @@ function User(info) {
         password: info.password || ""
     });
     viewModel.login = function () {
+
         return fetchModule.fetch(config.signinUrl + "/login", {
                 method: "GET",
                 headers: {
@@ -27,12 +28,11 @@ function User(info) {
               return returnInfo.token;
                         })
             .then(function (data) {
-               console.log(data)
                global.token = data
-                if (user.token === null) {
+                if (global.token === null) {
                     throw Error(data);
                 }
-                user.username = viewModel.get("username")
+                global.username = viewModel.get("username")
                 appSettings.setString("username", viewModel.get("username"));
                 appSettings.setString("password", viewModel.get("password"));
                 console.log(appSettings.getString("username"))

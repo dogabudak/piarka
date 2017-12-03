@@ -32,7 +32,7 @@ function User(info) {
             })
             .then(handleErrors)
             .then(function (response) {
-          //    console.log("**********"+JSON.stringify(response))
+              console.log("**********"+JSON.stringify(response))
             returnInfo = JSON.parse(response._bodyInit)
                 return returnInfo.token;
             })
