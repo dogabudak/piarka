@@ -1,4 +1,4 @@
+
 var application = require("application");
-application.mainModule = "views/login/login";
 application.cssFile = "./app.css";
-application.start();
+application.start({ moduleName: "views/login/login" });
