@@ -27,7 +27,7 @@
                             mapStyle="light"
                             latitude="41.01557434"
                             longitude="28.9800726"
-                            zoomLevel="13"
+                            zoomLevel="10"
                             showUserLocation="true"
                             mapReady="onMapReady">
                     </map:MapboxView>
