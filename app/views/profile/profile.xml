@@ -1,11 +1,11 @@
 <Page loaded="loaded">
     <StackLayout>
       <Image src="res://logo" stretch="none" horizontalAlignment="center"/>
-      <Image id="myImage" />
-      <!--Button text="Take A Picture" tap="tapAction" /-->
-      <!--Image id="pict"  width="40" height="40" stretch="aspectFit" /-->
-        <!--Button row="1" text="Pick Image From Gallery" tap="onSelectGallery" /-->
-      <TextField text="{{ Name }}" id="Name" hint="Name" autocorrect="false" autocapitalizationType="none"/>
+      <Image width="50" length="50" id="imageSrc" />
+
+       <Button text="Pick Single" tap="onSelectSingleTap" horizontalAlignment="center" />
+
+       <TextField text="{{ Name }}" id="Name" hint="Name" autocorrect="false" autocapitalizationType="none"/>
         <TextField text="{{ surname }}" id="surname" hint="Surname" autocorrect="false" autocapitalizationType="none"/>
         <TextField text="{{email}}" id="email" hint="Email Address" keyboardType="email" autocorrect="false"
                    autocapitalizationType="none"/>
