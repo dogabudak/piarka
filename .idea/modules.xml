@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/piarch-a.iml" filepath="$PROJECT_DIR$/.idea/piarch-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/piarka.iml" filepath="$PROJECT_DIR$/.idea/piarka.iml" />
     </modules>
   </component>
 </project>
