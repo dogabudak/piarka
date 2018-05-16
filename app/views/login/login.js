@@ -15,7 +15,8 @@ exports.loaded = function (args) {
         navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
     }
 
-    //tns run ios | tns run android her defasında yeniden build ettiği için eski değerler siliniyor tns livesync ios --emulator --watch modunda aşağısı çalışıyor
+    console.log(appSettings.getString("username"), appSettings.getString("password"))
+    //tns run ios | tns run android her defasında yeniden build ettiği için eski değerler siliniyor
     if (appSettings.getString("username") && appSettings.getString("password")) {
         user.Autologin()
             .catch(function () {

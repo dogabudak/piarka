@@ -15,58 +15,59 @@ function User(info) {
     viewModel.login = function () {
 
         return fetchModule.fetch(config.signinUrl + "/login", {
-                method: "GET",
-                headers: {
-                    'Authorize': 'basic ' + viewModel.get("username") + ":" + viewModel.get("password"),
-                    "Content-Type": "application/json"
+            method: "GET",
+            headers: {
+                'Authorize': 'basic ' + viewModel.get("username") + ":" + viewModel.get("password"),
+                "Content-Type": "application/json"
 
-                }
-            })
+            }
+        })
             .then(handleErrors)
             .then(function (response) {
-              returnInfo = JSON.parse(response._bodyInit)
-              return returnInfo.token;
-                        })
+                var returnInfo = JSON.parse(response._bodyInit)
+                return returnInfo.token;
+            })
             .then(function (data) {
-               global.token = data
+                global.token = data
                 if (global.token === null) {
                     throw Error(data);
                 }
                 global.username = viewModel.get("username")
-                appSettings.setString("username", viewModel.get("username"));
+                appSettings.setString("username", global.username);
                 appSettings.setString("password", viewModel.get("password"));
                 console.log(appSettings.getString("username"))
             });
     };
     viewModel.Autologin = function () {
+
         return fetchModule.fetch(config.signinUrl + "/login", {
-                method: "GET",
-                headers: {
-                    'Authorize': 'basic ' + appSettings.getString("username") + ":" + appSettings.getString("password"),
-                    "Content-Type": "application/json"
-                }
-            })
+            method: "GET",
+            headers: {
+                'Authorize': 'basic ' + appSettings.getString("username") + ":" + appSettings.getString("password"),
+                "Content-Type": "application/json"
+            }
+        })
             .then(handleErrors)
             .then(function (response) {
-              returnInfo = JSON.parse(response._bodyInit)
-              return returnInfo.token;
-                        })
+                var returnInfo = JSON.parse(response._bodyInit)
+                return returnInfo.token;
+            })
             .then(function (data) {
                 global.token = data
-                if (user.token === null) {
+                if (global.token === null) {
                     throw Error(data);
                 }
-                user.username = appSettings.getString("username")
+                global.username = appSettings.getString("username")
             });
     };
     viewModel.facebooklogin = function () {
         return fetchModule.fetch(config.signinUrl + "/login", {
-                method: "GET",
-                headers: {
-                    'Authorize': 'basic ' + appSettings.getString("username") + ":" + appSettings.getString("password"),
-                    "Content-Type": "application/json"
-                }
-            })
+            method: "GET",
+            headers: {
+                'Authorize': 'basic ' + appSettings.getString("username") + ":" + appSettings.getString("password"),
+                "Content-Type": "application/json"
+            }
+        })
             .then(handleErrors)
             .then(function (response) {
                 return response.json();
