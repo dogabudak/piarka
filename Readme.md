@@ -1,3 +1,5 @@
+#  DEPRECATED
+
 *****These both have permissons please check the websites for additional information*****
 tns plugin add nativescript-mapbox
 
